@@ -30,3 +30,9 @@ nmap <silent> <leader>l :wincmd l<CR>
 
 " FZF
 map <leader>f :FZF<return>
+
+" Strip trailing whitespace 
+noremap <leader>ss :call StripWhitespace()<CR>
+
+" Save a file as root 
+noremap <leader>W :w !sudo tee % > /dev/null<CR>

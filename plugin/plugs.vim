@@ -17,12 +17,14 @@ Plugin 'elzr/vim-json'
 Plugin 'junegunn/fzf'
 Plugin 'navarasu/onedark.nvim'
 "Plugin 'nvim-telescope/telescope.nvim'
+Plugin 'rafi/awesome-vim-colorschemes'
 
 call vundle#end()               " required
 filetype plugin indent on       " required
 
 " Set gruvbox permanently
-colorscheme gruvbox
+colorscheme oceanic_material
+"colorscheme space-vim-dark
 set background=dark
 
 " Set airline theme
@@ -36,7 +38,5 @@ let g:airline_theme='wombat'
 let g:Lf_DefaultMode = 'NameOnly'
 
 " Popup window settings
-"let g:Lf_PopupWidth = 0.5
-"let g:Lf_PopupPosition = [0, &columns/4]
-" - Popup window (center of the current window)
+" Center of the current window
 let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.6, 'relative': v:true } }

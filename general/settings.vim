@@ -47,6 +47,9 @@ set noundofile
 " Disable highlight while searching
 set nohlsearch
 
+" Highlight dynamically as pattern is typed
+set incsearch
+
 " Keep 8 lines above or below the cursor when scrolling.
 set scrolloff=8
 
@@ -97,3 +100,14 @@ set splitright
 " Yaml stuffs
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent foldlevel=1
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" Don’t add empty newlines at the end of files
+set binary
+set noeol
+
+" Respect modeline in files
+set modeline
+set modelines=4         
+
+" Don’t show the intro message when starting Vim
+set shortmess=atI
