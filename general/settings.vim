@@ -4,7 +4,7 @@ set nu
 
 " Set the tabwidth=2, and
 " the shiftstop=2
-set ts=2
+set ts=4
 set sw=2
 
 " syntax enable
@@ -28,6 +28,11 @@ set wildmode=longest,list
 " Delete comment character when joining commented lines
 set formatoptions+=j
 
+" Disable inserting comment leader after hitting o/O,
+"  <Enter> in insert mode
+set formatoptions-=o
+set formatoptions-=r
+
 " Reload unchanged files automatically.
 set autoread
 
@@ -38,6 +43,7 @@ set history=1000
 set nowritebackup
 set nobackup
 set noundofile
+
 " Disable highlight while searching
 set nohlsearch
 
@@ -77,3 +83,17 @@ set undofile
 
 " Always focus on splited window.
 set splitright
+
+" YAML
+"autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+"
+"set foldlevelstart=20
+"
+"let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+"let g:ale_sign_error = '✘'
+"let g:ale_sign_warning = '⚠'
+"let g:ale_lint_on_text_changed = 'never'
+
+" Yaml stuffs
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent foldlevel=1
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
