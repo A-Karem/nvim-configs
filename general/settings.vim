@@ -87,18 +87,11 @@ set undofile
 " Always focus on splited window.
 set splitright
 
-" YAML
-"autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-"
-"set foldlevelstart=20
-"
-"let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-"let g:ale_sign_error = '✘'
-"let g:ale_sign_warning = '⚠'
-"let g:ale_lint_on_text_changed = 'never'
+" Enable list mode
+set list
 
 " Yaml stuffs
-au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml foldmethod=indent foldlevel=1
+au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Don’t add empty newlines at the end of files
@@ -107,7 +100,23 @@ set noeol
 
 " Respect modeline in files
 set modeline
-set modelines=4         
+set modelines=4
 
 " Don’t show the intro message when starting Vim
 set shortmess=atI
+
+" Height of the command bar
+set cmdheight=1
+
+" Show match
+set showmatch
+
+" Configure backspace so it acts as it should act
+set backspace=eol,start,indent
+set whichwrap+=<,>,h,l,[,]
+
+" Hide the mouse when typing text
+set mousehide
+
+" Do lots of scanning on tab completion
+set complete=.,w,b,u,U,t,i,d

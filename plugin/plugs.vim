@@ -18,6 +18,7 @@ Plugin 'junegunn/fzf'
 Plugin 'navarasu/onedark.nvim'
 "Plugin 'nvim-telescope/telescope.nvim'
 Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'Scuilion/markdown-drawer'
 
 call vundle#end()               " required
 filetype plugin indent on       " required
@@ -38,5 +39,19 @@ let g:airline_theme='wombat'
 let g:Lf_DefaultMode = 'NameOnly'
 
 " Popup window settings
-" Center of the current window
+" center of the current window
 let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.6, 'relative': v:true } }
+
+" Markdown options
+let g:markdrawer_prefix = " " 
+let g:markdrawer_goto = "o"
+let g:markdrawerDelete = "D"
+let g:markdrawer_width = "25"
+let g:markdrawer_paste_below = "p"
+let g:markdrawer_increase = "+"
+let g:markdrawer_decrease = "-"
+let g:markdrawer_to_delete_color = "Red"
+
+let g:markdrawer_drawer_max_levels = 4 " max levels to display
+let g:markdrawer_toc = 'index' " displays as a TOC
+let g:markdrawer_toc = 'full_index' " displays as a TOC, no index reset
