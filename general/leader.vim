@@ -20,6 +20,7 @@ map <leader>e :e
 
 " Buffers
 map <leader>b :buffers<CR>:buffer<Space>
+map <leader>k :bdelete<CR>
 
 " PluginInstall
 map <leader>i :PluginInstall<return>
@@ -32,7 +33,7 @@ nnoremap <silent>gn :bn<CR>:redraw<CR>
 nnoremap <silent>gp :bp<CR>:redraw<CR>
 
 " FZF
-map <leader>f :FZF<return>
+map <leader>f :FZF<return> 
 
 " Strip trailing whitespace 
 noremap <leader>ss :call StripWhitespace()<CR>
@@ -41,7 +42,7 @@ noremap <leader>ss :call StripWhitespace()<CR>
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
 " Online doc search
-noremap <leader>k :call OnlineDoc()<CR>
+noremap <leader>o :call OnlineDoc()<CR>
 
 " Clipboard
 nmap <leader>y "+y

@@ -3,4 +3,5 @@ bundle/
 plugged/
 undodir/
 bundle/
-test.txt
+*.txt
+*.md

@@ -25,13 +25,12 @@ set laststatus=2
 set wildmenu
 set wildmode=longest,list
 
-" Delete comment character when joining commented lines
-set formatoptions+=j
+set encoding=utf-8
 
 " Disable inserting comment leader after hitting o/O,
 "  <Enter> in insert mode
-set formatoptions-=o
-set formatoptions-=r
+" Disables automatic commenting on newline:
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Reload unchanged files automatically.
 set autoread
@@ -88,11 +87,26 @@ set undofile
 set splitright
 
 " Enable list mode
-set list
+"set list
+
+" Replacing Tabs with White Spaces
+set expandtab
+
+"set cursorline
+set confirm
+set display+=lastline
+set encoding=utf-8
+set autochdir
+set nomodeline
+set nrformats-=octal
+set shell=/bin/bash
+set linebreak
+set colorcolumn=80
+highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Yaml stuffs
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2
 
 " Don’t add empty newlines at the end of files
 set binary
@@ -120,3 +134,24 @@ set mousehide
 
 " Do lots of scanning on tab completion
 set complete=.,w,b,u,U,t,i,d
+
+" Shortcutting split navigation, saving a keypress:
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Replace ex mode with gq
+map Q gq
+
+
+" Save file as sudo on files that require root permission
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+
+" Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
+if &diff
+    highlight! link DiffText MatchParen
+endif
+
+" Markdown
+autocmd bufreadpre *.{mkd,md} setlocal textwidth=0 conceallevel=2

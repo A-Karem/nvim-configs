@@ -16,24 +16,69 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'elzr/vim-json'
 Plugin 'junegunn/fzf'
 Plugin 'navarasu/onedark.nvim'
-"Plugin 'nvim-telescope/telescope.nvim'
 Plugin 'rafi/awesome-vim-colorschemes'
-Plugin 'Scuilion/markdown-drawer'
 
 call vundle#end()               " required
 filetype plugin indent on       " required
 
-" Set gruvbox permanently
-colorscheme oceanic_material
-"colorscheme space-vim-dark
+" Set theme permanently
+colorscheme gruvbox
 set background=dark
+
+let g:gruvbox_contrast_dark = 'hard'
+
+if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+endif
 
 " Set airline theme
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-let g:airline_theme='wombat'
+"let g:airline_theme='wombat'
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#buffer_idx_mode = 1
+"let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#left_sep = ''
+"let g:airline#extensions#tabline#left_alt_sep = ''
+"let g:airline#extensions#tabline#right_sep = ''
+"let g:airline#extensions#tabline#right_alt_sep = ''
+"let g:airline#extensions#tabline#formatter = 'default'
+
+set guifont=Hack:h10:cANSI
+"set guifont=Source\ Code\ Pro\ for\ Powerline:h15:cANSI
+"set guifont=Source_Code_Pro_Dark:h15:cANSI
+
+" unicode symbols
+"let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+"let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.crypt = '🔒'
+"let g:airline_symbols.linenr = '␊'
+"let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = '☰'
+"let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+"let g:airline_symbols.paste = 'Þ'
+"let g:airline_symbols.paste = '∥'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_theme= 'gruvbox'
+
+" powerline symbols
+"let g:airline_left_sep = ''
+"let g:airline_left_alt_sep = ''
+"let g:airline_right_sep = ''
+"let g:airline_right_alt_sep = ''
+"let g:airline_symbols.branch = ''
+"let g:airline_symbols.readonly = ''
+"let g:airline_symbols.linenr = '☰'
+"let g:airline_symbols.maxlinenr = ''
 
 " Only fuzzy-search files names
 let g:Lf_DefaultMode = 'NameOnly'
@@ -43,15 +88,3 @@ let g:Lf_DefaultMode = 'NameOnly'
 let g:fzf_layout = { 'window': { 'width': 0.5, 'height': 0.6, 'relative': v:true } }
 
 " Markdown options
-let g:markdrawer_prefix = " " 
-let g:markdrawer_goto = "o"
-let g:markdrawerDelete = "D"
-let g:markdrawer_width = "25"
-let g:markdrawer_paste_below = "p"
-let g:markdrawer_increase = "+"
-let g:markdrawer_decrease = "-"
-let g:markdrawer_to_delete_color = "Red"
-
-let g:markdrawer_drawer_max_levels = 4 " max levels to display
-let g:markdrawer_toc = 'index' " displays as a TOC
-let g:markdrawer_toc = 'full_index' " displays as a TOC, no index reset
