@@ -23,12 +23,13 @@ set laststatus=2
 
 " Autocomplete commands using nice menu in place of window status.
 set wildmenu
-set wildmode=longest,list
+set wildmode=longest,full
+set wildoptions=tagfile 	" pum --> popup
 
 set encoding=utf-8
 
 " Disable inserting comment leader after hitting o/O,
-"  <Enter> in insert mode
+" <Enter> in insert mode
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -55,6 +56,13 @@ set scrolloff=8
 " Keep 15 columns next to the cursor when scrolling horizontally.
 set sidescroll=1
 set sidescrolloff=15
+
+highlight Cursor guifg=white guibg=black
+highlight iCursor guifg=white guibg=steelblue
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10
 
 " Disable any annoying beeps on errors.
 set noerrorbells
@@ -104,7 +112,10 @@ set linebreak
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
-" Yaml stuffs
+" Config files
+au! BufNewFile,BufRead {config,conf} setf texmf
+
+" Yaml files
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2
 
@@ -134,6 +145,9 @@ set mousehide
 
 " Do lots of scanning on tab completion
 set complete=.,w,b,u,U,t,i,d
+
+" Complete from Dictionary
+set dictionary+=/usr/share/dict/words
 
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
