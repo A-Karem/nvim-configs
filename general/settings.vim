@@ -107,7 +107,7 @@ set encoding=utf-8
 set autochdir
 set nomodeline
 set nrformats-=octal
-set shell=/bin/bash
+set shell=/bin/sh
 set linebreak
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
@@ -118,6 +118,10 @@ au! BufNewFile,BufRead {config,conf} setf texmf
 " Yaml files
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2
+
+" Markdown
+autocmd FileType markdown setlocal textwidth=0 conceallevel=2
+autocmd BufEnter *.md exe 'noremap <F5> :! /usr/bin/google-chrome %:p<CR>'
 
 " Don’t add empty newlines at the end of files
 set binary
@@ -158,14 +162,18 @@ map <C-l> <C-w>l
 " Replace ex mode with gq
 map Q gq
 
-
-" Save file as sudo on files that require root permission
-cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
-
-" Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
+" Turns off highlighting on the bits of code that are changed,
+" so the line that is changed is highlighted but the actual text that has
+" changed stands out on the line and is readable.
 if &diff
     highlight! link DiffText MatchParen
 endif
 
-" Markdown
-autocmd bufreadpre *.{mkd,md} setlocal textwidth=0 conceallevel=2
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Rename dirs
+nmap <Leader>c :Rename<cr>

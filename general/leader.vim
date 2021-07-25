@@ -50,9 +50,6 @@ nnoremap <silent>gp :bp<CR>:redraw<CR>
 " Strip trailing whitespace 
 noremap <leader>ss :call StripWhitespace()<CR>
 
-" Save a file as root 
-noremap <leader>W :w !sudo tee % > /dev/null<CR>
-
 " Online doc search
 "noremap <leader>o :call OnlineDoc()<CR>
 
@@ -79,3 +76,22 @@ nmap <leader>v' vi'
 nmap <leader>v> vi>
 
 nmap <leader># I#!/bin/sh<CR><ESC>
+
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" use <tab> for trigger completion and navigate to the next complete item
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
+inoremap <silent><expr> <Tab>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<Tab>" :
+      \ coc#refresh()
