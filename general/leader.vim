@@ -38,7 +38,7 @@ map <silent> <leader>b :buffers<CR>:buffer<Space>
 map <silent> <leader>k :bdelete<CR>
 
 " PluginInstall
-map <silent><leader>i :PluginInstall<return>
+map <silent><leader>i :PlugInstall<return>
 
 " Undotree
 map <silent> <leader>n :UndotreeToggle<return>

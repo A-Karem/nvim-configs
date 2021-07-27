@@ -24,8 +24,7 @@ set laststatus=2
 " Autocomplete commands using nice menu in place of window status.
 set wildmenu
 set wildmode=longest,full
-set wildoptions=tagfile 	" pum --> popup
-
+set wildoptions=pum 	" pum-->popup, tagfile-->in statusesline
 set encoding=utf-8
 
 " Disable inserting comment leader after hitting o/O,
@@ -42,7 +41,7 @@ set history=1000
 " Disable writebackup because some tools have issues with it:
 set nowritebackup
 set nobackup
-set noundofile
+" set noundofile
 
 " Disable highlight while searching
 set nohlsearch
@@ -88,7 +87,7 @@ set nowrap
 set noswapfile
 
 " Create undodir
-set undodir=~/.config/nvim/undodir
+" set undodir=~/.config/nvim/undodir
 set undofile
 
 " Always focus on splited window.
@@ -120,7 +119,7 @@ au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2
 
 " Markdown
-autocmd FileType markdown setlocal textwidth=0 conceallevel=2
+" autocmd FileType markdown setlocal textwidth=0 conceallevel=2
 autocmd BufEnter *.md exe 'noremap <F5> :! /usr/bin/google-chrome %:p<CR>'
 
 " Don’t add empty newlines at the end of files
