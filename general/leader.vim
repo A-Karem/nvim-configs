@@ -31,7 +31,7 @@ map <silent> <leader><Right> gt<return>
 map <silent> <leader><Left> gT<return>
 
 " Edit file
-map <leader>e :e 
+" map <leader>e :e 
 
 " Buffers
 map <silent> <leader>b :buffers<CR>:buffer<Space>
@@ -43,9 +43,12 @@ map <silent><leader>i :PlugInstall<return>
 " Undotree
 map <silent> <leader>n :UndotreeToggle<return>
 
-" Windows navigation
+" Windows navigation and resizing
 nnoremap <silent>gn :bn<CR>:redraw<CR>
 nnoremap <silent>gp :bp<CR>:redraw<CR>
+
+nnoremap <silent><leader>+ <C-w>5+
+nnoremap <silent><leader>- <C-w>5-
 
 " Strip trailing whitespace 
 noremap <leader>ss :call StripWhitespace()<CR>
@@ -64,19 +67,21 @@ vmap <leader>p "+p
 vmap <leader>P "+P"`"`"
 
 " Quoting
-map <leader>" c"<C-r>""<ESC>
-map <leader>' c'<C-r>"'<ESC>
+noremap <leader>" vec"<C-r>""<ESC>
+noremap <leader>' vec'<C-r>"'<ESC>
+vmap <leader>" ce"<C-r>""<ESC>
+vmap <leader>' ce'<C-r>"'<ESC>
 
 " Visualizing
-nmap <leader>v) vi)
-nmap <leader>v} vi}
-nmap <leader>v] vi]
-nmap <leader>v" vi"
-nmap <leader>v' vi'
-nmap <leader>v> vi>
+nmap <leader>v) f(vi)
+nmap <leader>v} f{vi}
+nmap <leader>v] f[vi]
+nmap <leader>v" f"vi"
+nmap <leader>v' f'vi'
+nmap <leader>v> f<vi>
 
-nmap <leader># I#!/bin/sh<CR><ESC>
-
+nnoremap <silent><leader>1 :only<return>
+nnoremap <silent><leader>2 <C-ww> :only<return>
 
 " Use <c-space> to trigger completion.
 if has('nvim')
@@ -95,3 +100,5 @@ inoremap <silent><expr> <Tab>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
+
+map <C-c> :execute "vimgrep /" . expand("<cword>") . "/j **" <Bar> cw<CR>

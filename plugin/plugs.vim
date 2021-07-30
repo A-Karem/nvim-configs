@@ -1,4 +1,4 @@
-call plug#begin('~/.config/nvim/plugged/')
+call plug#begin('~/.config/nvim/vim_plugins/')
 
 Plug 'morhetz/gruvbox'
 Plug 'mbbill/undotree'
@@ -22,27 +22,23 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'sheerun/vim-polyglot'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
-
-let g:NERDTreeHijackNetrw = 0   " Add this line if you use NERDTree
-let g:lf_replace_netrw = 1 		" Open lf when vim opens a directory
 
 " Set theme permanently
 colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_dark = 'hard'
 
+" Set airline theme
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
-
-" Set airline theme
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#left_sep = ''
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-"let g:airline_theme= 'gruvbox'
 let g:airline_theme= 'gruvbox'
 set guifont=Hack:h10:cANSI
 
@@ -57,7 +53,7 @@ let g:airline_symbols.linenr = '␤'
 let g:airline_symbols.linenr = '¶'
 let g:airline_symbols.maxlinenr = '☰'
 let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.branch = ''
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.paste = 'Þ'
 let g:airline_symbols.paste = '∥'

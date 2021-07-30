@@ -59,5 +59,7 @@
 	],
 	"coc.source.emoji.enable": true,
 	"coc.source.emoji.filetypes": null,
-	"coc.source.emoji.disableSyntaxes": []
+	"coc.source.emoji.disableSyntaxes": [],
+	"explorer.width": 30,
+	"explorer.icon.enableNerdfont": true
 }

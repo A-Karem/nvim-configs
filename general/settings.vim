@@ -25,7 +25,6 @@ set laststatus=2
 set wildmenu
 set wildmode=longest,full
 set wildoptions=pum 	" pum-->popup, tagfile-->in statusesline
-set encoding=utf-8
 
 " Disable inserting comment leader after hitting o/O,
 " <Enter> in insert mode
@@ -93,9 +92,6 @@ set undofile
 " Always focus on splited window.
 set splitright
 
-" Enable list mode
-"set list
-
 " Replacing Tabs with White Spaces
 set expandtab
 
@@ -112,14 +108,13 @@ set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 
 " Config files
-au! BufNewFile,BufRead {config,conf} setf texmf
+au! BufNewFile,BufRead *.{config,conf} setf texmf
 
 " Yaml files
 au! BufNewFile,BufReadPost *.{yaml,yml} set filetype=yaml
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2
 
 " Markdown
-" autocmd FileType markdown setlocal textwidth=0 conceallevel=2
 autocmd BufEnter *.md exe 'noremap <F5> :! /usr/bin/google-chrome %:p<CR>'
 
 " Don’t add empty newlines at the end of files
@@ -152,6 +147,9 @@ set complete=.,w,b,u,U,t,i,d
 " Complete from Dictionary
 set dictionary+=/usr/share/dict/words
 
+" Use completion-nvim in every buffer
+" autocmd BufEnter * lua require'completion'.on_attach()
+
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
 map <C-j> <C-w>j
@@ -167,12 +165,3 @@ map Q gq
 if &diff
     highlight! link DiffText MatchParen
 endif
-
-" GoTo code navigation.
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Rename dirs
-nmap <Leader>c :Rename<cr>

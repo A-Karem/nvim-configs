@@ -1,7 +1,5 @@
-.netrwhist
 bundle/
 plugged/
 undodir/
 bundle/
 *.txt
-*.md
