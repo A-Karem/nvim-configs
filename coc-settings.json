@@ -38,5 +38,9 @@
   "coc.source.emoji.filetypes": null,
   "coc.source.emoji.disableSyntaxes": [],
   "explorer.width": 30,
-  "explorer.icon.enableNerdfont": true
+  "explorer.icon.enableNerdfont": true,
+  "explorer.keyMappings.global": {
+    "l": ["wait", "expandable?", "expand", "open:tab"],
+    "<cr>": ["wait", "expandable?", "cd", "open:tab"]
+  }
 }
