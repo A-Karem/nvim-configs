@@ -8,7 +8,7 @@ function! StripWhitespace()
 endfunction
 
 function! OnlineDoc()
-        let s:browser = "firefox"
+        let s:browser = "/usr/bin/google-chrome"
         let s:wordUnderCursor = expand("<cword>") 
 
         if &ft == "cpp" || &ft == "c" || &ft == "ruby" || &ft == "php" || &ft == "python" 
