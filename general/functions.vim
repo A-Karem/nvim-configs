@@ -1,12 +1,3 @@
-" Strip trailing whitespace (,ss)
-function! StripWhitespace()
-	let save_cursor = getpos(".")
-	let old_query = getreg('/')
-	:%s/\s\+$//e
-	call setpos('.', save_cursor)
-	call setreg('/', old_query)
-endfunction
-
 function! OnlineDoc()
         let s:browser = "/usr/bin/google-chrome"
         let s:wordUnderCursor = expand("<cword>") 
@@ -25,4 +16,3 @@ function! OnlineDoc()
         redraw!
 endfunction
 
-" lua require'lspconfig'.pyls.setup{on_attach=require'completion'.on_attach}
