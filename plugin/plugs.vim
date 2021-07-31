@@ -11,7 +11,7 @@ Plug 'elzr/vim-json'
 Plug 'navarasu/onedark.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'qpkorr/vim-renamer'
-Plug 'ptzz/lf.vim'
+"Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'mhinz/vim-startify'
 Plug 'siduck76/NvChad'
@@ -22,7 +22,9 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'sheerun/vim-polyglot'
-Plug 'ryanoasis/vim-devicons'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
+
 
 call plug#end()
 
@@ -30,6 +32,7 @@ call plug#end()
 colorscheme gruvbox
 set background=dark
 let g:gruvbox_contrast_dark = 'hard'
+let g:gruvbox_termcolor = 16
 
 " Set airline theme
 if !exists('g:airline_symbols')
