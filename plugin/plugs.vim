@@ -10,8 +10,6 @@ Plug 'airblade/vim-gitgutter'
 Plug 'elzr/vim-json'
 Plug 'navarasu/onedark.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'qpkorr/vim-renamer'
-"Plug 'ptzz/lf.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'mhinz/vim-startify'
 Plug 'siduck76/NvChad'
