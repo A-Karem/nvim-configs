@@ -1,5 +1,5 @@
 bundle/
-plugged/
+vim_plugins/
 undodir/
 bundle/
 *.txt
