@@ -31,6 +31,12 @@ set wildoptions=pum     " pum-->popup, tagfile-->in statusesline
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" Jenkinsfile
+au BufNewFile,BufRead Jenkinsfile setf groovy
+
+" Better comments in json
+autocmd FileType json syntax match Comment +\/\/.\+$+
+
 " Reload unchanged files automatically.
 set autoread
 
@@ -191,7 +197,7 @@ nnoremap <leader>k :m .-2<CR>==
 
 " Make CTRL-z harmless
 nnoremap <C-z> <NOP>
- 
+
 " change updatetime
 set updatetime=300
 
@@ -200,3 +206,10 @@ set inccommand=split
 
 set completeopt=menuone,noselect
 
+set noshowmode
+set signcolumn=yes
+set iskeyword+=-
+set pumheight=10
+set hidden
+set t_Co=256
+set conceallevel=0

@@ -21,8 +21,10 @@ Plug 'junegunn/seoul256.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'sheerun/vim-polyglot'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'luchermitte/vim-refactor'
+Plug 'nelstrom/vim-visual-star-search'
 
 call plug#end()

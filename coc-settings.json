@@ -1,9 +1,10 @@
 {
   "coc.preferences.formatOnSaveFiletypes": [
-    "markdown",
     "yaml",
     "json",
-    "python"
+    "python",
+    "groovy",
+    "terraform"
   ],
   "yaml.format.enable": true,
   "yaml.schemas": {
@@ -42,5 +43,6 @@
   "explorer.keyMappings.global": {
     "l": ["wait", "expandable?", "expand", "open:tab"],
     "<cr>": ["wait", "expandable?", "cd", "open:tab"]
-  }
+  },
+  "yank.highlight.duration": 50
 }

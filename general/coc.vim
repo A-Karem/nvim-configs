@@ -1,4 +1,28 @@
 let g:coc_global_extension=['coc-omnisharp']
+let g:coc_global_extension=['coc-dictionary']
+let g:coc_global_extension=['coc-docker']
+let g:coc_global_extension=['coc-emoji']
+let g:coc_global_extension=['coc-eslint']
+let g:coc_global_extension=['coc-explorer']
+let g:coc_global_extension=['coc-fzf-preview']
+let g:coc_global_extension=['coc-git']
+let g:coc_global_extension=['coc-groovy']
+let g:coc_global_extension=['coc-highlight']
+let g:coc_global_extension=['coc-json']
+let g:coc_global_extension=['coc-lua']
+let g:coc_global_extension=['coc-markdownlint']
+let g:coc_global_extension=['coc-omni']
+let g:coc_global_extension=['coc-omnisharp']
+let g:coc_global_extension=['coc-prettier']
+let g:coc_global_extension=['coc-pyright']
+let g:coc_global_extension=['coc-python']
+let g:coc_global_extension=['coc-sh']
+let g:coc_global_extension=['coc-snippets']
+let g:coc_global_extension=['coc-syntax']
+let g:coc_global_extension=['coc-tsserver']
+let g:coc_global_extension=['coc-vimlsp']
+let g:coc_global_extension=['coc-yaml']
+let g:coc_global_extension=['coc-yank']
 
 " Explorer conf
 nnoremap <silent><space>e :CocCommand explorer<CR>
@@ -32,10 +56,15 @@ else
   inoremap <silent><expr> <c-@> coc#refresh()
 endif
 
-nmap <Leader>f [fzf-p]
-xmap <Leader>f [fzf-p]
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
 
-nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
+nmap <Leader><Leader> [fzf-p]
+xmap <Leader><Leader> [fzf-p]
+
+noremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
 nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
 nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
 nnoremap <silent> [fzf-p]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
@@ -50,3 +79,8 @@ xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F
 nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
 nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
 nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
