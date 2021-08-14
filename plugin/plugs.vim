@@ -26,5 +26,6 @@ Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'luchermitte/vim-refactor'
 Plug 'nelstrom/vim-visual-star-search'
+Plug 'NLKNguyen/papercolor-theme'
 
 call plug#end()

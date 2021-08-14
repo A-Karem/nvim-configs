@@ -4,8 +4,8 @@ set nu
 
 " Set the tabwidth=2, and
 " the shiftstop=2
-set ts=2
-set sw=2
+" Replacing Tabs with White Spaces
+set ts=2 sw=2 expandtab
 
 " syntax enable
 syntax on
@@ -97,9 +97,7 @@ set undofile
 
 " Always focus on splited window.
 set splitright
-
-" Replacing Tabs with White Spaces
-set expandtab
+set splitbelow
 
 "set cursorline
 set confirm
@@ -198,6 +196,9 @@ nnoremap <leader>k :m .-2<CR>==
 " Make CTRL-z harmless
 nnoremap <C-z> <NOP>
 
+" quick back to noraml
+inoremap <C-c><C-c> <esc>
+
 " change updatetime
 set updatetime=300
 
@@ -206,10 +207,8 @@ set inccommand=split
 
 set completeopt=menuone,noselect
 
-set noshowmode
 set signcolumn=yes
 set iskeyword+=-
 set pumheight=10
 set hidden
-set t_Co=256
 set conceallevel=0
