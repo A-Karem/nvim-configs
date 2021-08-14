@@ -89,3 +89,6 @@ function! s:fzf_statusline()
 endfunction
 
 autocmd! User FzfStatusLine call <SID>fzf_statusline()
+
+" GBrowse from Fugitive
+nnoremap <leader>B :GBrowse<CR>

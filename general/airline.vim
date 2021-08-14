@@ -3,10 +3,14 @@ if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
 " airline_symbols
 let g:airline_symbols.crypt = '🔒'
 let g:airline_symbols.readonly = '🔒'
-" let g:airline_symbols.readonly = ''
 
 let g:airline_symbols.branch = ''
 let g:airline_symbols.notexists = '∄'
@@ -27,8 +31,10 @@ let g:airline_symbols.whitespace = 'Ξ'
 
 " AIRLINE THEME
 let g:airline_theme= 'base16'
-" let g:airline_theme='papercolor'
-
 set guifont=Hack:h10:cANSI
 
-" let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+" Always show tabs
+set showtabline=2
+
+" We don't need to see things like -- INSERT -- anymore
+set noshowmode
