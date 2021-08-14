@@ -6,3 +6,6 @@ source $HOME/.config/nvim/general/functions.vim
 source $HOME/.config/nvim/general/airline.vim
 source $HOME/.config/nvim/general/themes.vim
 source $HOME/.config/nvim/general/fzf.vim
+source $HOME/.config/nvim/general/startify.vim
+source $HOME/.config/nvim/general/farr.vim
+source $HOME/.config/nvim/general/git_things.vim
