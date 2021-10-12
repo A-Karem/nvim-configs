@@ -3,7 +3,6 @@
     "yaml",
     "json",
     "python",
-    "groovy",
     "terraform"
   ],
   "yaml.format.enable": true,
