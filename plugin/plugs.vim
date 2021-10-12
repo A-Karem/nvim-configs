@@ -26,5 +26,6 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'brooth/far.vim'
+Plug 'APZelos/blamer.nvim'
 
 call plug#end()
