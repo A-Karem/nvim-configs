@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =1
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/home/akarem/.jenkins/war/executable'
+let g:netrw_dirhist_3='/home/akarem/.jenkins/war'
+let g:netrw_dirhist_2='/home/akarem/projects/tazawaj/tazawaj-iac/global/aws/ecr'
 let g:netrw_dirhist_1='/home/akarem/.config/nvim/plugin'

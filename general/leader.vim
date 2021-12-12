@@ -2,7 +2,7 @@
 let mapleader = " "
 
 " Source current file
-map <silent> <leader>s :source %<CR>
+map <leader>s :source %<CR>
 
 " open settings.vim
 nnoremap <silent> <leader>os :<C-U>tab drop ~/.config/nvim/general/settings.vim<CR>

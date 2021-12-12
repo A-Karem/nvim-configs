@@ -28,4 +28,14 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'brooth/far.vim'
 Plug 'APZelos/blamer.nvim'
 
+if has('nvim')
+  Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'gelguy/wilder.nvim'
+
+  " To use Python remote plugin features in Vim, can be skipped
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
 call plug#end()

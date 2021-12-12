@@ -1,4 +1,5 @@
 source $HOME/.config/nvim/general/leader.vim
+source $HOME/.config/nvim/general/wilder.vim
 source $HOME/.config/nvim/general/blamer.vim
 source $HOME/.config/nvim/general/coc.vim
 source $HOME/.config/nvim/plugin/plugs.vim
