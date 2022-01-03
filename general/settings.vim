@@ -102,7 +102,7 @@ set splitbelow
 "set cursorline
 set confirm
 set display+=lastline
-set encoding=utf-8
+set encoding=UTF-8
 set autochdir
 set nomodeline
 set nrformats-=octal
