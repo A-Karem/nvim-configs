@@ -212,3 +212,6 @@ set iskeyword+=-
 set pumheight=10
 set hidden
 set conceallevel=0
+
+" Spell checker
+map <F6> :setlocal spell! spelllang=en_us<CR>
