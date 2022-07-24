@@ -1,6 +1,12 @@
-require('settings')
-require('mappings')
-require('packer_configs')
-require('colorSchemes_configs.nightfox')
-require('neo_tree_configs')
-
+require "settings"
+require "mappings"
+require "packer-configs"
+require "colorSchemes-configs.nightfox"
+require "neo-tree-configs"
+require "lspconfigs.language_server"
+require "lspconfigs.nvim_cmp"
+require "lualine-config"
+require "treesitter-config"
+require "whichKey-config"
+require "dap-ui"
+require "gitsigns-config"

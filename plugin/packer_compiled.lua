@@ -69,6 +69,41 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  LuaSnip = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/LuaSnip",
+    url = "https://github.com/L3MON4D3/LuaSnip"
+  },
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
+  },
+  ["cmp-nvim-lsp"] = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
+    url = "https://github.com/hrsh7th/cmp-nvim-lsp"
+  },
+  cmp_luasnip = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
+    url = "https://github.com/saadparwaiz1/cmp_luasnip"
+  },
+  ["gitsigns.nvim"] = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
+    url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  ["lspkind.nvim"] = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/lspkind.nvim",
+    url = "https://github.com/onsails/lspkind.nvim"
+  },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["neo-tree.nvim"] = {
     loaded = true,
     path = "/home/akarem/.local/share/nvim/site/pack/packer/start/neo-tree.nvim",
@@ -84,10 +119,57 @@ _G.packer_plugins = {
     path = "/home/akarem/.local/share/nvim/site/pack/packer/start/nui.nvim",
     url = "https://github.com/MunifTanjim/nui.nvim"
   },
+  ["nvim-cmp"] = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/nvim-cmp",
+    url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-comment"] = {
+    config = { "\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17nvim_comment\frequire\0" },
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/nvim-comment",
+    url = "https://github.com/terrortylor/nvim-comment"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
+  },
+  ["nvim-lsp-installer"] = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/nvim-lsp-installer",
+    url = "https://github.com/williamboman/nvim-lsp-installer"
+  },
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
+    url = "https://github.com/neovim/nvim-lspconfig"
+  },
+  ["nvim-notify"] = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/nvim-notify",
+    url = "https://github.com/rcarriga/nvim-notify"
+  },
+  ["nvim-treesitter"] = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
+    url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/akarem/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
+  },
+  ["nvim-window-picker"] = {
+    config = { "\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18window-picker\frequire\0" },
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/nvim-window-picker",
+    url = "https://github.com/s1n7ax/nvim-window-picker"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -98,10 +180,33 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/akarem/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["registers.nvim"] = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/registers.nvim",
+    url = "https://github.com/tversteeg/registers.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["which-key.nvim"] = {
+    loaded = true,
+    path = "/home/akarem/.local/share/nvim/site/pack/packer/start/which-key.nvim",
+    url = "https://github.com/folke/which-key.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: nvim-window-picker
+time([[Config for nvim-window-picker]], true)
+try_loadstring("\27LJ\2\n;\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\18window-picker\frequire\0", "config", "nvim-window-picker")
+time([[Config for nvim-window-picker]], false)
+-- Config for: nvim-comment
+time([[Config for nvim-comment]], true)
+try_loadstring("\27LJ\2\n:\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\17nvim_comment\frequire\0", "config", "nvim-comment")
+time([[Config for nvim-comment]], false)
 if should_profile then save_profiles() end
 
 end)
