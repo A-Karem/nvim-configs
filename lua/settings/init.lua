@@ -35,3 +35,4 @@ set.showmode = false
 set.swapfile = false
 set.updatetime = 300
 set.signcolumn = "yes"
+set.autoread = true

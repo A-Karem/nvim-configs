@@ -33,6 +33,8 @@ map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Terminal --
+map("n", '<C-`>', ':vsp|term<CR>', silent)
+
 -- Better terminal navigation
 map("t", "<C-h>", "<C-\\><C-N><C-w>h", silent)
 map("t", "<C-j>", "<C-\\><C-N><C-w>j", silent)
@@ -89,6 +91,7 @@ map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
 map('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
 map('n', '<leader>fb', ':Telescope buffers<CR>', opts)
 map('n', '<leader>fh', ':Telescope help_tags<CR>', opts)
+map('n', '<leader>fd', ':Telescope diagnostics<CR>', opts)
 
 
 -- Comment
