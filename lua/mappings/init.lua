@@ -1,20 +1,24 @@
 --- Creating variabls
 local map = vim.api.nvim_set_keymap
+local set = vim.keymap.set
 local opts = { noremap = true, silent = true }
 local silent = { silent = true }
+local noremap = { noremap = true }
 
 --- Set <space> as leader key
 vim.g.mapleader = ' '
 
 -- NeoTree
 map('n', '<leader>e', ':NeoTreeRevealToggle<CR>', opts)
-
 -- Source luafile
 map('n', '<leader>s', ':luafile %<CR>', opts)
 
 -- Save and quit
-map('n', '<leader>w', ':w<CR>', opts)
+set('n', '<leader>w', ':w<CR>', noremap)
 map('n', '<leader>q', ':q<CR>', opts)
+
+-- Add workstation
+set('n', '<space>aw', vim.lsp.buf.add_workspace_folder, opts)
 
 -- Navigation windows
 map('n', '<C-h>', '<C-w>h', opts)
@@ -32,8 +36,12 @@ map("n", "<C-Down>", ":resize -2<CR>", opts)
 map("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 map("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
+-- Better pasting
+map('x', '<leader>p', '\"_dP', opts)
+
 -- Terminal --
 map("n", '<C-`>', ':vsp|term<CR>', silent)
+map("t", '<ESC>', '<C-\\><C-N>', silent)
 
 -- Better terminal navigation
 map("t", "<C-h>", "<C-\\><C-N><C-w>h", silent)
@@ -44,7 +52,7 @@ map("t", "<C-l>", "<C-\\><C-N><C-w>l", silent)
 map("t", '<C-d>', '<C-\\><C-N>', silent)
 
 -- Packer
-map('n', '<leader>p', ':PackerSync<CR>', opts)
+-- map('n', '<leader>P', ':PackerSync<CR>', opts)
 
 -- BarBar
 -- Move to previous/next
@@ -92,8 +100,34 @@ map('n', '<leader>fg', ':Telescope live_grep<CR>', opts)
 map('n', '<leader>fb', ':Telescope buffers<CR>', opts)
 map('n', '<leader>fh', ':Telescope help_tags<CR>', opts)
 map('n', '<leader>fd', ':Telescope diagnostics<CR>', opts)
+map('n', '<leader>fs', ':Telescope current_buffer_fuzzy_find<CR>', opts)
+-- map("n", "<leader>fg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
+
 
 
 -- Comment
-map('n', '<leader>/', ':CommentToggle<CR>', opts)
-map('v', '<leader>/', ':CommentToggle<CR>', opts)
+set({'n', 'v'}, '<leader>/', ':CommentToggle<CR>', opts)
+
+-- Dap -- debugging
+set("n", "<F1>", ":lua require'dap'.step_into()<CR>")
+set("n", "<F2>", ":lua require'dap'.step_over()<CR>")
+set("n", "<F3>", ":lua require'dap'.step_out()<CR>")
+set("n", "<F5>", ":lua require'dap'.continue()<CR>")
+set("n", "<F12>", ":lua require'dap'.terminate()<CR>")
+set("n", "<leader>b", ":lua require'dap'.toggle_breakpoint()<CR>")
+set("n", "<leader>B", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+-- set("n", "<leader>do", ":lua require'dap'.repl.open()<CR>")
+set("n", "<leader>dn", ":lua require('dap-python').test_method()<CR>")
+set("n", "<leader>df", ":lua require('dap-python').test_class()<CR>")
+set("v", "<leader>ds", "<ESC>:lua require('dap-python').debug_selection()<CR>")
+
+local dap, dapui = require("dap"), require("dapui")
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end

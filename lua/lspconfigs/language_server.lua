@@ -1,4 +1,4 @@
-local nvim_lsp = require('lspconfig')
+require("nvim-lsp-installer").setup {}
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
@@ -36,6 +36,38 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 require('lspconfig')['pyright'].setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
+    flags = lsp_flags,
+}
+require('lspconfig')['terraformls'].setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
+    flags = lsp_flags,
+}
+require('lspconfig')['tflint'].setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
+    flags = lsp_flags,
+}
+require('lspconfig')['sumneko_lua'].setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
+    flags = lsp_flags,
+    settings = {
+      Lua = {
+        diagnostics = {
+          globals = {'vim'},
+        }
+      }
+    }
+}
+require('lspconfig')['tsserver'].setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
+    flags = lsp_flags,
+}
+require('lspconfig')['yamlls'].setup{
     on_attach = on_attach,
     capabilities = capabilities,
     flags = lsp_flags,

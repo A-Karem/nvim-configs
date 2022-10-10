@@ -36,3 +36,11 @@ set.swapfile = false
 set.updatetime = 300
 set.signcolumn = "yes"
 set.autoread = true
+set.listchars = {
+  tab = '»·',
+  eol = '↲',
+  extends = '␣',
+  precedes = '⟨',
+  trail = '¬'
+}
+set.list = true
