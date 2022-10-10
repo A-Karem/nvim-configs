@@ -1,0 +1,14 @@
+# Follwing the example in the ci URL
+
+# Using the latest version of CircleCI pipeline process.
+version: 2.1
+# using a package of configuration called an orb.
+orbs:
+  # Declare a dependency on the welcome-orb
+  welcome: circleci/welcome-orb@0.4.1
+
+# Orchestrate/Schedule a set of jobs
+workflows:
+  welcome:
+    jobs:
+      - welcome/run
