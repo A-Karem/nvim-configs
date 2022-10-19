@@ -20,7 +20,7 @@ jobs:
           command: echo 'export MY_VAR="Ahmed"' >> "$BASH_ENV"
       - run:
           name: "What was my custom environment variable?"
-          command: echo ${MY_ENV_VAR}
+          command: echo ${MY_VAR}
   # print_hello:
   #   docker:
   #     - image: circleci/node:13.8.0
