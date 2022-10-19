@@ -9,35 +9,28 @@ orbs:
 
 # Orchestrate/Schedule a set of jobs
 jobs:
-  print_helloworld:
+  save_hello_world_output:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - run: echo Hello World!
-      - run: echo ${CIRCLE_BRANCH}
-      # - run:
-      #     name: "Setup custom environment"
-      #     command: echo 'export MY_VAR="Ahmed"' >> "$BASH_ENV"
-      - run:
-          name: "What was my custom environment variable?"
-          command: echo ${MY_VAR}
-  # print_hello:
-  #   docker:
-  #     - image: circleci/node:13.8.0
-  #   steps:
-  #     - run: echo hello
-  # print_world:
-  #   docker:
-  #     - image: circleci/node:13.8.0
-  #   steps:
-  #     - run: echo world
+      - run: echo "Hello World!" > ~/output.txt
+      - persist_to_workspace:
+          root: ~/
+          paths:
+          - output.txt
+
+  print_output_file:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run: cat output.txt
+      - attach_workspace:
+          at: ~/
 
 workflows:
   Build:
     jobs:
-      - print_helloworld
-      # - welcome/run
-      # - print_hello
-      # - print_world:
-      #     requires:
-      #     - print_hello
+    - save_hello_world_output
+    - print_output_file:
+        requires:
+        - save_hello_world_output
