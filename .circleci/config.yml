@@ -15,9 +15,9 @@ jobs:
     steps:
       - run: echo Hello World!
       - run: echo ${CIRCLE_BRANCH}
-      - run:
-          name: "Setup custom environment"
-          command: echo 'export MY_VAR="Ahmed"' >> "$BASH_ENV"
+      # - run:
+      #     name: "Setup custom environment"
+      #     command: echo 'export MY_VAR="Ahmed"' >> "$BASH_ENV"
       - run:
           name: "What was my custom environment variable?"
           command: echo ${MY_VAR}
