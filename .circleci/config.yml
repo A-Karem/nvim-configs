@@ -33,7 +33,7 @@ jobs:
   #     - run: echo world
 
 workflows:
-  welcome:
+  Build:
     jobs:
       - print_helloworld
       # - welcome/run
