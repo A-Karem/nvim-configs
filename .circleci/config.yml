@@ -1,36 +1,27 @@
 # Follwing the example in the ci URL
 
-# Using the latest version of CircleCI pipeline process.
 version: 2.1
-# using a package of configuration called an orb.
 orbs:
-  # Declare a dependency on the welcome-orb
   welcome: circleci/welcome-orb@0.4.1
 
-# Orchestrate/Schedule a set of jobs
-jobs:
-  save_hello_world_output:
-    docker:
-      - image: circleci/node:13.8.0
+commands:
+  print_pipeline_id:
+    description: "Testing the work with commands property"
+    parameters:
+      to:
+        type: string
+        default: "$CIRCLE_WORKFLOW_ID"
     steps:
-      - run: echo "Hello World!" > ~/output.txt
-      - persist_to_workspace:
-          root: ~/
-          paths:
-          - output.txt
+      - run: echo << parameters.to >>
 
-  print_output_file:
+jobs:
+  Test:
     docker:
       - image: circleci/node:13.8.0
     steps:
-      - attach_workspace:
-          at: ~/
-      - run: cat ~/output.txt
+      - print_pipeline_id:
 
 workflows:
   Build:
     jobs:
-    - save_hello_world_output
-    - print_output_file:
-        requires:
-        - save_hello_world_output
+    - Test
