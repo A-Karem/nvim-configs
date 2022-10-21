@@ -10,9 +10,9 @@ commands:
     parameters:
       to:
         type: string
-        default: "$CIRCLE_WORKFLOW_ID"
+        default: "This is: "
     steps:
-      - run: echo << parameters.to >>
+      - run: echo "<<parameters.to>>"
 
 jobs:
   Test:
@@ -20,6 +20,7 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - print_pipeline_id:
+          to: "$CIRCLE_WORKFLOW_ID"
 
 workflows:
   Build:
