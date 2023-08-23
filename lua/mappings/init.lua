@@ -26,6 +26,10 @@ map('n', '<C-l>', '<C-w>l', opts)
 map('n', '<C-k>', '<C-w>k', opts)
 map('n', '<C-j>', '<C-w>j', opts)
 
+-- Better jumps
+map('n', '<C-d>', '<C-d>zz', opts)
+map('n', '<C-u>', '<C-u>zz', opts)
+
 -- Wrapping
 map('v', '<leader>"', 'c"<C-r>""<ESC>', opts)
 map('v', '<leader>(', 'c(<C-r>")<ESC>', opts)
